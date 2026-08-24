@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Americans for a Moral Union - Promoting patriotic values, moral principles, and unity in America. Join us in building a stronger nation.">
+    <title>Americans for a Moral Union | Patriotic Values & Unity</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo-circular.png">
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#home" class="flex items-center space-x-3">
+                        <img src="images/logo-circular.png" alt="Americans for a Moral Union Logo" class="h-10 w-10 rounded-full object-cover">
+                        <span class="text-xl font-bold text-navy hidden sm:block">Americans for a Moral Union</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#about" class="hover:text-red-600 transition-colors">About</a>
+                    <a href="#mission" class="hover:text-red-600 transition-colors">Mission</a>
+                    <a href="#get-involved" class="hover:text-red-600 transition-colors">Get Involved</a>
+                    <a href="#donate" class="hover:text-red-600 transition-colors">Donate</a>
+                    <a href="#shop" class="hover:text-red-600 transition-colors">Shop</a>
+                    <a href="#events" class="hover:text-red-600 transition-colors">Events</a>
+                    <a href="#blog" class="hover:text-red-600 transition-colors">News</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#get-involved" 
+                       class="px-4 py-2 text-sm font-semibold text-navy border border-navy rounded-full hover:bg-navy hover:text-white transition-all">
+                        Join Us
+                    </a>
+                    <a href="#donate" 
+                       class="px-4 py-2 text-sm font-semibold bg-red-600 text-white rounded-full hover:bg-red-700 transition-all">
+                        Donate
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" 
+                        class="md:hidden p-2 rounded-lg hover:bg-gray-100"
+                        aria-label="Toggle menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-4 space-y-3 text-sm font-medium">
+                <a href="#about" class="block py-2 hover:text-red-600">About</a>
+                <a href="#mission" class="block py-2 hover:text-red-600">Mission</a>
+                <a href="#get-involved" class="block py-2 hover:text-red-600">Get Involved</a>
+                <a href="#donate" class="block py-2 hover:text-red-600">Donate</a>
+                <a href="#shop" class="block py-2 hover:text-red-600">Shop Merch</a>
+                <a href="#events" class="block py-2 hover:text-red-600">Events</a>
+                <a href="#blog" class="block py-2 hover:text-red-600">News & Blog</a>
+                <div class="pt-4 flex flex-col space-y-2">
+                    <a href="#get-involved" class="px-4 py-2 text-center text-navy border border-navy rounded-full hover:bg-navy hover:text-white">Join Us</a>
+                    <a href="#donate" class="px-4 py-2 text-center bg-red-600 text-white rounded-full hover:bg-red-700">Donate Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-[90vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center" 
+             style="background-image: url('images/hero-bg.jpg');">
+            <div class="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/60 to-navy/80"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
+            <!-- Logo in Hero -->
+            <div class="mb-6 flex justify-center">
+                <img src="images/logo-circular.png" alt="Americans for a Moral Union" 
+                     class="h-24 w-24 md:h-28 md:w-28 rounded-full border-4 border-white/30 shadow-2xl">
+            </div>
+
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 text-black drop-shadow-2xl">
+                Americans for a<br>Moral Union
+            </h1>
+            <p class="text-xl md:text-2xl text-black/90 mb-8 max-w-2xl mx-auto drop-shadow-xl">
+                Building a stronger America through timeless values, moral principles, and patriotic unity.
+            </p>
+
+            <!-- Rotating Quotes -->
+            <div class="max-w-3xl mx-auto mb-10 h-16 md:h-20 flex items-center justify-center">
+                <div id="quote-container" 
+                     class="text-lg md:text-xl italic text-gray-800 transition-opacity duration-500 px-4">
+                    <!-- Quotes populated by JS -->
+                </div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#get-involved" 
+                   class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all shadow-lg">
+                    Become a Member
+                </a>
+                <a href="#donate" 
+                   class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-red-600 text-white rounded-full hover:bg-red-700 transition-all shadow-lg">
+                    Support Our Mission
+                </a>
+            </div>
+            <p class="mt-6 text-sm text-white/70">Utah-based</p>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Trust / Quick Stats -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-3xl font-bold text-navy">Est. 2026</div>
+                <div class="text-sm text-gray-600 mt-1">Founded on Principle</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-navy">100%</div>
+                <div class="text-sm text-gray-600 mt-1">Volunteer Powered</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-navy">Patriotic</div>
+                <div class="text-sm text-gray-600 mt-1">Values First</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-navy">Unity</div>
+                <div class="text-sm text-gray-600 mt-1">Moral Foundation</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-block px-4 py-1.5 bg-red-100 text-red-700 text-sm font-semibold rounded-full mb-4">WHO WE ARE</span>
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-navy mb-6">A Movement for Moral Renewal</h2>
+                <div class="prose prose-lg text-gray-700">
+                    <p class="mb-4">Americans for a Moral Union is an organization dedicated to restoring the foundational principles that made America great: integrity, responsibility, faith, family, and unity.</p>
+                    <p>We believe that a strong nation begins with strong individuals and strong communities grounded in timeless moral values. Through education, advocacy, community events, and civic engagement, we work to inspire a new generation of patriots committed to these ideals.</p>
+                </div>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#mission" class="inline-flex items-center text-red-600 font-semibold hover:text-red-700">
+                        Read our full mission →
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-gray-200">
+                    <img src="images/logo-banner.png" alt="Americans for a Moral Union" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border max-w-[260px]">
+                    <p class="font-semibold text-navy">"A moral union of Americans is the surest path to a lasting republic."</p>
+                    <p class="text-sm text-gray-600 mt-2">— Our Founding Vision</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section id="mission" class="bg-navy text-white py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-red-400 text-sm font-semibold tracking-[3px]">OUR FOUNDATION</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-3 text-black">Mission &amp; Core Values</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Mission -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-3 text-black">
+                        <span class="text-red-400">🇺🇸</span> Our Mission
+                    </h3>
+                    <p class="text-blue-500 leading-relaxed">To unite Americans around a shared commitment to moral principles, civic virtue, and patriotic responsibility — fostering communities that strengthen families, honor tradition, and secure liberty for future generations.</p>
+                </div>
+
+                <!-- Values -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <h3 class="text-2xl font-bold mb-4 text-black">Core Values</h3>
+                    <ul class="space-y-3 text-blue-500">
+                        <li class="flex gap-3"><span class="font-bold text-red-400">Integrity</span> — Doing what is right even when no one is watching.</li>
+                        <li class="flex gap-3"><span class="font-bold text-red-400">Unity</span> — E Pluribus Unum: Out of many, one.</li>
+                        <li class="flex gap-3"><span class="font-bold text-red-400">Responsibility</span> — Personal accountability and duty to community.</li>
+                        <li class="flex gap-3"><span class="font-bold text-red-400">Faith &amp; Family</span> — The bedrock of a moral society.</li>
+                        <li class="flex gap-3"><span class="font-bold text-red-400">Patriotism</span> — Love of country expressed through service and stewardship.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved / Forms -->
+    <section id="get-involved" class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div class="text-center mb-12">
+            <span class="inline-block px-4 py-1.5 bg-red-100 text-red-700 text-sm font-semibold rounded-full mb-3">TAKE ACTION</span>
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-navy">Get Involved</h2>
+            <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">Whether you want to volunteer, become a member, or simply stay informed — there’s a place for you here.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10">
+            <!-- Member Sign-up Form -->
+            <div class="bg-white rounded-2xl shadow-xl border p-8">
+                <h3 class="text-2xl font-bold text-navy mb-2">Become a Member</h3>
+                <p class="text-gray-600 mb-6">Join our growing community of patriots committed to moral renewal.</p>
+                
+                <form id="member-form" action="https://formspree.io/f/YOUR_MEMBER_FORM_ID" method="POST" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-medium mb-1.5">First Name</label>
+                            <input type="text" name="first_name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-navy">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1.5">Last Name</label>
+                            <input type="text" name="last_name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-navy">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1.5">Email Address</label>
+                        <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-navy">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1.5">City / State</label>
+                        <input type="text" name="location" placeholder="e.g., Salt Lake City, UT" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-navy">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1.5">Why do you want to join? (Optional)</label>
+                        <textarea name="message" rows="3" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-navy resize-y"></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="_subject" value="New Member Sign-up - Americans for a Moral Union">
+                    <input type="hidden" name="_redirect" value="#thank-you">
+                    
+                    <button type="submit" 
+                            class="w-full py-4 bg-navy text-white font-semibold rounded-full hover:bg-navy/90 transition-all flex items-center justify-center gap-2">
+                        <span>Join the Movement</span>
+                    </button>
+                    <p class="text-xs text-center text-gray-500">We respect your privacy. Unsubscribe anytime.</p>
+                </form>
+            </div>
+
+            <!-- Volunteer / Contact Form -->
+            <div class="bg-white rounded-2xl shadow-xl border p-8">
+                <h3 class="text-2xl font-bold text-navy mb-2">Volunteer or Contact Us</h3>
+                <p class="text-gray-600 mb-6">Interested in helping with events, outreach, or have a question? Let us know.</p>
+                
+                <form id="volunteer-form" action="https://formspree.io/f/YOUR_VOLUNTEER_FORM_ID" method="POST" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-medium mb-1.5">Full Name</label>
+                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-navy">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1.5">Email</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-navy">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1.5">Phone (Optional)</label>
+                        <input type="tel" name="phone" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-navy">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1.5">How would you like to help?</label>
+                        <select name="interest" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-navy">
+                            <option value="">Select an area...</option>
+                            <option value="Events &amp; Community">Events &amp; Community Outreach</option>
+                            <option value="Merch &amp; Branding">Merch &amp; Branding</option>
+                            <option value="Content &amp; Communications">Content &amp; Communications</option>
+                            <option value="Fundraising">Fundraising &amp; Donations</option>
+                            <option value="General Volunteer">General Volunteer / Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1.5">Message</label>
+                        <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-navy resize-y" placeholder="Tell us more about how you'd like to get involved..."></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="_subject" value="Volunteer / Contact Inquiry - Americans for a Moral Union">
+                    
+                    <button type="submit" 
+                            class="w-full py-4 bg-red-600 text-white font-semibold rounded-full hover:bg-red-700 transition-all">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Thank You Message (hidden, shown after form submit via redirect or JS) -->
+        <div id="thank-you" class="hidden mt-8 max-w-2xl mx-auto bg-green-50 border border-green-200 text-green-800 rounded-2xl p-8 text-center">
+            <h3 class="text-2xl font-bold mb-2">Thank You!</h3>
+            <p>Your submission has been received. We'll be in touch soon. Together, we can build a Moral Union.</p>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="bg-gradient-to-br from-navy to-[#0A2540] text-white py-16 md:py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="text-red-400 text-sm font-semibold tracking-[2px]">SUPPORT THE CAUSE</span>
+            <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-4 text-black">Make a Difference Today</h2>
+            <p class="text-xl text-blue-500 max-w-2xl mx-auto mb-10">Your generous donation helps us promote moral values, host community events, produce educational content, and grow this movement across America.</p>
+
+            <!-- Donation Options -->
+            <div class="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10">
+                <div class="bg-white/10 hover:bg-white/15 transition-all border border-white/20 rounded-2xl p-6 text-center">
+                    <div class="text-3xl font-bold mb-1 text-black">$25</div>
+                    <div class="text-sm mb-4 text-black">Supporter</div>
+                    <a href="#donate-paypal" class="block w-full py-3 bg-blue-600 text-black font-semibold rounded-full text-sm">Donate $25</a>
+                </div>
+                <div class="bg-white/10 hover:bg-white/15 transition-all border border-white/20 rounded-2xl p-6 text-center ring-2 ring-red-400">
+                    <div class="text-3xl font-bold mb-1 text-black">$50</div>
+                    <div class="text-sm mb-4 text-black">Patriot</div>
+                    <a href="#donate-paypal" class="block w-full py-3 bg-red-700 text-black font-semibold rounded-full text-sm">Donate $50</a>
+                </div>
+                <div class="bg-white/10 hover:bg-white/15 transition-all border border-white/20 rounded-2xl p-6 text-center">
+                    <div class="text-3xl font-bold mb-1 text-black">$100+</div>
+                    <div class="text-sm mb-4 text-black">Champion</div>
+                    <a href="#donate-paypal" class="block w-full py-3 bg-blue-600 text-black font-semibold rounded-full text-sm">Donate $100</a>
+                </div>
+            </div>
+
+            <!-- PayPal Button Placeholder -->
+            <div id="donate-paypal" class="max-w-xs mx-auto">
+                <!-- Replace this with your actual PayPal Donate button code -->
+                <form action="https://www.paypal.com/donate" method="post" target="_top" class="text-center">
+                    <input type="hidden" name="hosted_button_id" value="YOUR_PAYPAL_BUTTON_ID" />
+                    <input type="hidden" name="cmd" value="_donations" />
+                    <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL" />
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" 
+                           border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                    <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                </form>
+                <p class="text-xs text-black mt-3">Secure donation via PayPal</p>
+            </div>
+
+            <p class="mt-8 text-sm text-black">Prefer to mail a check? Contact us for mailing instructions.</p>
+        </div>
+    </section>
+
+<!-- Merch Store -->
+<section id="shop" class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
+        <div>
+            <span class="text-red-600 text-sm font-semibold">REPRESENT THE VALUES</span>
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-navy mt-1">Official Merch Store</h2>
+        </div>
+        <a href="https://amoralunion.printful.me/" target="_blank" class="mt-4 md:mt-0 inline-flex items-center text-red-600 font-semibold hover:text-red-700">
+            Visit Full Store →
+        </a>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <!-- Mug -->
+        <div class="group bg-white border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+            <div class="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden">
+                <img src="https://cdn.printful.me/t/quick-stores/variants/w339/164728326a4ffdd5b7a11__825" alt="White Glossy Mug" class="w-4/5 group-hover:scale-105 transition-transform">
+            </div>
+            <div class="p-5">
+                <h4 class="font-semibold">White Glossy Mug</h4>
+                <p class="text-sm text-gray-600">11oz • Premium</p>
+                <div class="flex items-baseline justify-between mt-3">
+                    <span class="font-bold text-lg">$19.99</span>
+                    <a href="https://amoralunion.printful.me/product/white-glossy-mug-6a4ffdd55728c" target="_blank" class="text-sm px-4 py-1.5 bg-navy text-white rounded-full text-xs font-medium hover:bg-navy/90">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Be Honest Black -->
+        <div class="group bg-white border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+            <div class="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden">
+                <img src="https://cdn.printful.me/t/quick-stores/variants/w339/164725196a4ffac8428c5__825" alt="Be Honest Black T-Shirt" class="w-4/5 group-hover:scale-105 transition-transform">
+            </div>
+            <div class="p-5">
+                <h4 class="font-semibold">Be Honest Black Tee</h4>
+                <p class="text-sm text-gray-600">Unisex • Premium</p>
+                <div class="flex items-baseline justify-between mt-3">
+                    <span class="font-bold text-lg">$24.99</span>
+                    <a href="https://amoralunion.printful.me/product/behonest-black" target="_blank" class="text-sm px-4 py-1.5 bg-navy text-white rounded-full text-xs font-medium hover:bg-navy/90">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Self Control Dark -->
+        <div class="group bg-white border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+            <div class="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden">
+                <img src="https://cdn.printful.me/t/quick-stores/variants/w339/164723476a4ff9ada38c3__825" alt="Self Control Dark T-Shirt" class="w-4/5 group-hover:scale-105 transition-transform">
+            </div>
+            <div class="p-5">
+                <h4 class="font-semibold">Self Control Dark Tee</h4>
+                <p class="text-sm text-gray-600">Unisex • Premium</p>
+                <div class="flex items-baseline justify-between mt-3">
+                    <span class="font-bold text-lg">$24.99</span>
+                    <a href="https://amoralunion.printful.me/product/selfcontrol-dark" target="_blank" class="text-sm px-4 py-1.5 bg-navy text-white rounded-full text-xs font-medium hover:bg-navy/90">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Self Control Light -->
+        <div class="group bg-white border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+            <div class="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden">
+                <img src="https://cdn.printful.me/t/quick-stores/variants/w339/164720896a4ff896711c0__825" alt="Self Control Light T-Shirt" class="w-4/5 group-hover:scale-105 transition-transform">
+            </div>
+            <div class="p-5">
+                <h4 class="font-semibold">Self Control Light Tee</h4>
+                <p class="text-sm text-gray-600">Unisex • Premium</p>
+                <div class="flex items-baseline justify-between mt-3">
+                    <span class="font-bold text-lg">$24.99</span>
+                    <a href="https://amoralunion.printful.me/product/selfcontrol-light" target="_blank" class="text-sm px-4 py-1.5 bg-navy text-white rounded-full text-xs font-medium hover:bg-navy/90">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Be Honest Dark -->
+        <div class="group bg-white border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+            <div class="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden">
+                <img src="https://cdn.printful.me/t/quick-stores/variants/w339/164722806a4ff95caf75d__825" alt="Be Honest Dark T-Shirt" class="w-4/5 group-hover:scale-105 transition-transform">
+            </div>
+            <div class="p-5">
+                <h4 class="font-semibold">Be Honest Dark Tee</h4>
+                <p class="text-sm text-gray-600">Unisex • Premium</p>
+                <div class="flex items-baseline justify-between mt-3">
+                    <span class="font-bold text-lg">$24.99</span>
+                    <a href="https://amoralunion.printful.me/product/behonest-dark" target="_blank" class="text-sm px-4 py-1.5 bg-navy text-white rounded-full text-xs font-medium hover:bg-navy/90">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="text-center text-sm text-gray-500 mt-8">All products fulfilled by Printful. Prices may vary slightly.</p>
+
+    <!-- Full Store Embed -->
+    <div class="mt-16">
+        <h3 class="text-2xl font-bold text-center mb-6">Browse Full Store</h3>
+        <iframe src="https://amoralunion.printful.me/" 
+                width="100%" height="800" 
+                style="border: 1px solid #ddd; border-radius: 12px; overflow: auto;"
+                title="A Moral Union Printful Store">
+        </iframe>
+    </div>
+</section>
+
+    <!-- Events / Calendar -->
+    <section id="events" class="bg-gray-100 py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
+                <div>
+                    <span class="text-red-600 text-sm font-semibold">COMMUNITY IN ACTION</span>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-navy mt-1">Upcoming Events</h2>
+                </div>
+                <a href="#" class="mt-3 md:mt-0 text-red-600 font-semibold flex items-center gap-1 hover:text-red-700">View Full Calendar →</a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Event Card -->
+                <div class="bg-white rounded-2xl p-6 border shadow-sm">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-red-600 text-white text-center px-3 py-1 rounded-xl text-sm font-bold w-14">
+                            <div>JUL</div>
+                            <div class="text-xl">18</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Launch Town Hall</div>
+                            <div class="text-sm text-gray-600">Kaysville, UT • 6:00 PM</div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700 mb-4">Official launch event. Meet the founders, hear the vision, and sign up to get involved locally.</p>
+                    <a href="#" class="text-sm font-medium text-red-600 hover:underline">RSVP &amp; Details →</a>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border shadow-sm">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-red-600 text-white text-center px-3 py-1 rounded-xl text-sm font-bold w-14">
+                            <div>AUG</div>
+                            <div class="text-xl">09</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Values &amp; BBQ Community Night</div>
+                            <div class="text-sm text-gray-600">Layton, UT • 5:30 PM</div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700 mb-4">Family-friendly evening of food, fellowship, and discussion on restoring moral foundations in our communities.</p>
+                    <a href="#" class="text-sm font-medium text-red-600 hover:underline">Learn More →</a>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border shadow-sm">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-red-600 text-white text-center px-3 py-1 rounded-xl text-sm font-bold w-14">
+                            <div>SEP</div>
+                            <div class="text-xl">20</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Patriotism &amp; Service Day</div>
+                            <div class="text-sm text-gray-600">Various Locations • All Day</div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700 mb-4">Volunteer service projects across Davis County followed by a rally and recognition ceremony.</p>
+                    <a href="#" class="text-sm font-medium text-red-600 hover:underline">Get Details →</a>
+                </div>
+            </div>
+
+            <p class="text-center mt-8 text-sm text-gray-600">Want to host an event in your area? <a href="#get-involved" class="text-red-600 font-medium">Contact us</a>.</p>
+        </div>
+    </section>
+
+    <!-- Blog / News -->
+    <section id="blog" class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div class="flex items-end justify-between mb-10">
+            <div>
+                <span class="text-red-600 text-sm font-semibold">INSIGHTS &amp; UPDATES</span>
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-navy">News &amp; Commentary</h2>
+            </div>
+            <a href="#" class="hidden md:block text-red-600 font-semibold hover:text-red-700">View All Articles →</a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <article class="group">
+                <div class="aspect-video bg-gray-200 rounded-2xl mb-4 overflow-hidden">
+                    <img src="images/logo-banner.png" alt="Article thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                </div>
+                <div class="text-xs text-red-600 font-semibold mb-1">JULY 2026 • OPINION</div>
+                <h3 class="font-bold text-xl leading-tight mb-2 group-hover:text-red-600 transition-colors">Why Moral Renewal Must Come Before Political Solutions</h3>
+                <p class="text-gray-600 text-sm line-clamp-3">True and lasting change in America will not come from Washington alone. It must begin in our homes, churches, and communities...</p>
+                <a href="#" class="inline-block mt-3 text-sm font-medium text-red-600">Read full article →</a>
+            </article>
+
+            <article class="group">
+                <div class="aspect-video bg-gray-200 rounded-2xl mb-4 overflow-hidden">
+                    <img src="images/logo-banner.png" alt="Article thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                </div>
+                <div class="text-xs text-red-600 font-semibold mb-1">JUNE 2026 • UPDATE</div>
+                <h3 class="font-bold text-xl leading-tight mb-2 group-hover:text-red-600 transition-colors">Announcing Our 2026 Community Initiative: "Moral Foundations Utah"</h3>
+                <p class="text-gray-600 text-sm line-clamp-3">We're launching a statewide effort focused on local chapters, youth mentorship, and civic education programs rooted in America's founding principles.</p>
+                <a href="#" class="inline-block mt-3 text-sm font-medium text-red-600">Read full article →</a>
+            </article>
+
+            <article class="group">
+                <div class="aspect-video bg-gray-200 rounded-2xl mb-4 overflow-hidden">
+                    <img src="images/logo-banner.png" alt="Article thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                </div>
+                <div class="text-xs text-red-600 font-semibold mb-1">MAY 2026 • FEATURE</div>
+                <h3 class="font-bold text-xl leading-tight mb-2 group-hover:text-red-600 transition-colors">The Case for a Moral Union: Lessons from the Founders</h3>
+                <p class="text-gray-600 text-sm line-clamp-3">Drawing from Washington, Adams, and other early American leaders on the indispensable role of virtue in self-government.</p>
+                <a href="#" class="inline-block mt-3 text-sm font-medium text-red-600">Read full article →</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="bg-navy text-white py-16">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4 text-black">Ready to Stand for What’s Right?</h2>
+            <p class="text-xl text-black/90 mb-8">Join thousands of Americans who believe our best days are still ahead — if we return to the values that built this nation.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#get-involved" class="px-8 py-4 bg-red-600 text-white font-semibold rounded-full text-lg hover:bg-red-700 transition">Become a Member Today</a>
+                <a href="#donate" class="px-8 py-4 bg-blue-600 text-white font-semibold rounded-full text-lg hover:bg-blue-700 transition">Make a Donation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t py-12">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-y-10 text-sm">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="images/logo-circular.png" alt="Logo" class="h-9 w-9 rounded-full">
+                    <span class="font-bold text-lg text-navy">Americans for a Moral Union</span>
+                </div>
+                <p class="text-gray-600 pr-4">An organization dedicated to moral renewal and patriotic unity in America.</p>
+            </div>
+
+            <div>
+                <div class="font-semibold text-navy mb-3">Explore</div>
+                <div class="space-y-2 text-gray-600">
+                    <a href="#mission" class="block hover:text-navy">Our Mission</a>
+                    <a href="#get-involved" class="block hover:text-navy">Get Involved</a>
+                    <a href="#shop" class="block hover:text-navy">Shop Merch</a>
+                    <a href="#events" class="block hover:text-navy">Events</a>
+                </div>
+            </div>
+
+            <div>
+                <div class="font-semibold text-navy mb-3">Connect</div>
+                <div class="space-y-2 text-gray-600">
+                    <a href="#" class="block hover:text-navy">Facebook</a>
+                    <a href="#" class="block hover:text-navy">Instagram</a>
+                    <a href="#" class="block hover:text-navy">X (Twitter)</a>
+                    <a href="#blog" class="block hover:text-navy">Newsletter</a>
+                </div>
+            </div>
+
+            <div>
+                <div class="font-semibold text-navy mb-3">Legal &amp; Contact</div>
+                <div class="space-y-2 text-gray-600">
+                    <a href="#" class="block hover:text-navy">Privacy Policy</a>
+                    <a href="#" class="block hover:text-navy">Terms of Service</a>
+                    <a href="mailto:info@amoralunion.com" class="block hover:text-navy">info@amoralunion.com</a>
+                    <div class="pt-2 text-xs">© 2026 Americans for a Moral Union.<br>All rights reserved.</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

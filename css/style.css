@@ -1,0 +1,80 @@
+/* Custom styles for Americans for a Moral Union website */
+
+:root {
+  --navy: #0A2540;
+  --red: #C8102E;
+  --gold: #D4AF37;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar active link style (optional enhancement) */
+nav a.active {
+  color: #C8102E;
+  font-weight: 600;
+}
+
+/* Quote container styling */
+#quote-container {
+  font-family: Georgia, 'Times New Roman', serif;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Form focus states */
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 0 3px rgba(10, 37, 64, 0.1);
+  border-color: #0A2540;
+}
+
+/* Product card hover effects */
+.group:hover {
+  transform: translateY(-2px);
+}
+
+/* Event date badge */
+.event-date {
+  background: linear-gradient(135deg, #C8102E, #9B0D22);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.1;
+  }
+}
+
+/* Subtle flag-inspired accents */
+.border-navy {
+  border-color: #0A2540;
+}
+
+/* Thank you message animation */
+#thank-you {
+  animation: fadeInScale 0.4s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Print styles (optional) */
+@media print {
+  nav, .sticky, footer, #donate, #shop {
+    display: none !important;
+  }
+}
