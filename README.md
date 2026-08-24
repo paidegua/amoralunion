@@ -1,6 +1,6 @@
 # Americans for a Moral Union Website
 
-This is the official static website for **Americans for a Moral Union**, a 501(c)(3) nonprofit organization.
+This is the official static website for **Americans for a Moral Union**.
 
 **Live Site (after deployment):** https://www.amoralunion.com
 
